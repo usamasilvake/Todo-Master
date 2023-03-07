@@ -1,7 +1,7 @@
 
 import './App.css';
 import { useState, useEffect } from "react";
-import WeatherResult from './WeatherResult';
+import WeatherResult from './compoents/WeatherResult';
 import { collection, query, onSnapshot, Timestamp, addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { db } from './firebase-cong';
 import { Button, TextField } from '@mui/material';
