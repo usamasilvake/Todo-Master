@@ -8,8 +8,12 @@ import { Button, TextField } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { Container } from '@mui/system';
 
+
+
 const useStyles = makeStyles({
+
   inputtext: {
+    // maxWidth: 'cal(100% - 12px)',
     width: '28rem',
     '& .MuiInputBase-input': {
       fontSize: '1.2rem',
@@ -21,7 +25,10 @@ const useStyles = makeStyles({
     },
     '& .MuiInputBase-root': {
       borderBottom: '2px solid yellow',
-    }
+    },
+    '@media (max-width: 680px)': {
+      width: '20rem',
+    },
   },
 });
 
@@ -75,11 +82,11 @@ function App() {
     <div>
       <Container >
       <form className='todo_form' onSubmit={createTodo}>
-        <TextField className={formstyle.inputtext} color="warning" id="standard-search" label="Search Todo"
+        <TextField  className={formstyle.inputtext} color="warning" id="standard-search" label="Search Todo"
           type="search" variant="standard" placeholder="Enter message" value={input}
           onChange={(e) => setInput(e.target.value)} />
 
-        <Button sx={{margin: '10px 0 0px 30px'}} type="submit" variant="contained" size="large">add</Button>
+        <Button className='add_todo_button'  type="submit" variant="contained" size="large">add</Button>
       </form>
       {todos.map((todo, index) => (
         <TodoResult todo={todo} key={index} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />

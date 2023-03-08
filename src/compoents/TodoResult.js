@@ -62,6 +62,11 @@ const TodoResult = (props) => {
       setOpen(false)
     }
   }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  
+  };
   
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   return (
@@ -83,11 +88,13 @@ const TodoResult = (props) => {
           <Box  sx={style}>
             <label style={{color:'black'}}>Edit Todo</label>
             <Typography id="modal-modal-title" variant="h6" component="h2">
+              <form onClick={handleSubmit}>
               <Input placeholder={todo.todotext} sx={{color: 'green','&::placeholder': {color: 'green',},}}
                value={editedTodo} onChange={(e) => { setEditedTodo(e.target.value);
                 setEmpty(false);}} />
               {empty && <p style={{ color: 'red' }}>Please enter some text</p>}
               <Button sx={{marginLeft:'2rem'}} onClick={edititem} type="submit" variant="contained" size="medium">Save Edit</Button>
+              </form>
             </Typography>
           </Box>
         </Modal>

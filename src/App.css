@@ -14,14 +14,23 @@ body{
 .todo_form{
   text-align: center;
    padding: 2rem;
+   
 }
-.todo_result{
+/* .todo_result{
   display: 'flex';
   justify-content: 'center';
+} */
+.todo_form .add_todo_button{
+  margin: 20px 0 0px 30px;
 }
 /* width: calc(100% - 12px); */
 
 /* // responsive part */
-@media (max-width:667px) {
+@media (max-width:680px) {
+  .todo_form{
+     padding: 1rem;
+     /* background-color: red; */
+  }
+ 
   
 }
