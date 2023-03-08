@@ -12,3 +12,8 @@ A Todo Master is an online application where you can CRUD opeartion like you can
 - [X] Use of React Hooks
     - [X] useState
     - [X] useEffect
+
+
+## Libraries and Frameworks
+- [X] [Material-UI](https:https://mui.com/.com/)
+- [X] [TypeScript](https://www.typescriptlang.org/)
