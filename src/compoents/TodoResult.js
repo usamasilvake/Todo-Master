@@ -70,8 +70,8 @@ const TodoResult = (props) => {
   
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   return (
-    <div className='todo_result' style={{display: 'flex', justifyContent: 'center',}} >
-      <List className={togglestyle.main}  sx={{ width: '100%', maxWidth: 560,}}>  
+    <div  style={{display: 'flex', justifyContent: 'center',}} >
+      <List className={togglestyle.main}>  
       <ListItem >
         <Checkbox  {...label}   onChange={() => toggleComplete(todo)}
         sx={{position: 'absolute',top: '50%',left: '50%',transform: 'translate(200%, -50%)',color: orange[800],
