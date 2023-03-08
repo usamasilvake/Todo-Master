@@ -9,15 +9,9 @@ body{
   background-size: cover; 
   height: 100vh;
 }
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
+.todo_form{
+  text-align: center;
+   padding: 2rem;
+}
 /* width: calc(100% - 12px); */
