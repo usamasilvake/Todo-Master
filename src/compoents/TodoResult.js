@@ -39,7 +39,7 @@ const style = {
   p: 10,
 };
 
-const WeatherResult = (props) => {
+const TodoResult = (props) => {
   const { todo, deleteTodo,toggleComplete } = props;
   const [open, setOpen] = useState(false);
   const [editedTodo, setEditedTodo] = useState("");
@@ -101,4 +101,4 @@ const WeatherResult = (props) => {
   );
 }
 
-export default WeatherResult;
+export default TodoResult;

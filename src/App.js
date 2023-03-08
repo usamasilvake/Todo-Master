@@ -1,7 +1,7 @@
 
 import './App.css';
 import { useState, useEffect } from "react";
-import WeatherResult from './compoents/WeatherResult';
+import TodoResult from './compoents/TodoResult';
 import { collection, query, onSnapshot, Timestamp, addDoc, deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { db } from './firebase-cong';
 import { Button, TextField } from '@mui/material';
@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div>
-      <form style={{ textAlign: 'center', padding: '2rem' }} onSubmit={createTodo}>
+      <form className='todo_input_form' style={{ textAlign: 'center', padding: '2rem' }} onSubmit={createTodo}>
         <TextField color="warning" sx={{ width: '28rem', '& .MuiInputBase-input': { fontSize: '1.2rem', color: '#333', },
          '& .MuiInputLabel-root': {fontSize: '1.3rem', fontWeight: 'bold', color: 'white',}, '& .MuiInputBase-root': {
           borderBottom: '2px solid yellow',},}}
@@ -62,7 +62,7 @@ function App() {
       </form>
       {todos.map((todo, index) => (
 
-        <WeatherResult todo={todo} key={index} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
+        <TodoResult todo={todo} key={index} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
       ))}
     </div>
   );
