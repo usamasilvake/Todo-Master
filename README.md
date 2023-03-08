@@ -15,5 +15,6 @@ A Todo Master is an online application where you can CRUD opeartion like you can
 
 
 ## Libraries and Frameworks
-- [X] [Material-UI](https://mui.com/.com/)
-- [X] [TypeScript](https://www.typescriptlang.org/)
+- [X] [Material-UI](https://www.mui.com/.com/)
+- [X] [FIREBASE](https://www.firebase.google.com/)
+
