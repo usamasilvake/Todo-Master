@@ -57,7 +57,7 @@ const style = {
   border: '2px solid white',
   p: 10,
   '@media (max-width: 442px)': {
-   maxWidth: '350px'
+   maxWidth: '349px'
   },
 
   
