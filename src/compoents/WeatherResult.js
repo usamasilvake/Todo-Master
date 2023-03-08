@@ -4,10 +4,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, Input, List, ListItem, ListItemText, Modal, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { updateDoc, doc } from 'firebase/firestore';
-
 import EditIcon from '@mui/icons-material/Edit';
 import { makeStyles } from '@mui/styles';
-// import { CheckBox } from '@mui/icons-material';
 import Checkbox from '@mui/material/Checkbox';
 import { orange } from '@mui/material/colors';
 import { db } from '../firebase-cong';

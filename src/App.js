@@ -8,7 +8,7 @@ import { Button, TextField } from '@mui/material';
 
 function App() {
   const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
 
   // create todo from firebase
   const createTodo = async (e) => {
@@ -44,7 +44,7 @@ function App() {
       completed: !todo.completed,
     });
   };
-  // Delete todo from firebase
+  // Delete todo 
   const deleteTodo = async (id) => {
     await deleteDoc(doc(db, 'todotable', id));
   };
@@ -52,16 +52,13 @@ function App() {
   return (
     <div>
       <form style={{ textAlign: 'center', padding: '2rem' }} onSubmit={createTodo}>
-        <TextField color="warning" sx={{
-          width: '28rem', '& .MuiInputBase-input': { fontSize: '1.2rem', color: '#333', }, '& .MuiInputLabel-root': {
-            fontSize: '1.3rem', fontWeight: 'bold', color: 'white',
-          }, '& .MuiInputBase-root': {
-            borderBottom: '2px solid yellow',
-          },
-        }}
+        <TextField color="warning" sx={{ width: '28rem', '& .MuiInputBase-input': { fontSize: '1.2rem', color: '#333', },
+         '& .MuiInputLabel-root': {fontSize: '1.3rem', fontWeight: 'bold', color: 'white',}, '& .MuiInputBase-root': {
+          borderBottom: '2px solid yellow',},}}
           id="standard-search" label="Search Todo" type="search" variant="standard" placeholder="Enter message"
           value={input} onChange={(e) => setInput(e.target.value)} />
-        <Button style={{ marginLeft: '30px' }} type="submit" variant="contained" size="large">add</Button>
+
+        <Button sx={{margin:'10px 0 0px 30px'}} type="submit" variant="contained" size="large">add</Button>
       </form>
       {todos.map((todo, index) => (
 
