@@ -1,4 +1,4 @@
-
+// import './App.css';
 import React, { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, Input, List, ListItem, ListItemText, Modal, Typography } from '@mui/material';
@@ -14,6 +14,7 @@ const useStyles = makeStyles({
   text: {
     marginLeft: '2px',
     cursor: 'pointer',
+    
   },
   textComplete: {
     textDecoration: 'line-through',
@@ -23,6 +24,8 @@ const useStyles = makeStyles({
   },
   main:{
     backgroundColor: '#cbcdd1',
+    width: '100%', 
+    maxWidth: 560,
   },
 });
 
@@ -31,8 +34,6 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  // width: 500,
-  // width: '100%',
   maxWidth: '500px',
   bgcolor:'#cbcdd1',
   border: '2px solid white',
@@ -49,12 +50,6 @@ const TodoResult = (props) => {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  // checks if the trimmed input is an empty string, which means that the user has not entered any 
-  // non-whitespace characters. If the input is empty, setIsEmpty(true) is called to set the isEmpty state to true, 
-  // and return is used to exit the
-  //   function early and prevent the rest of the code from running.
-  // By doing this, you are ensuring that an empty input is not saved 
-  // to the database, and that the user is alerted that they need to enter some text before saving.
 
   // Edit Todo
   const edititem = async () => {
@@ -70,7 +65,7 @@ const TodoResult = (props) => {
   
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   return (
-    <div style={{display: 'flex', justifyContent: 'center',}} >
+    <div className='todo_result' style={{display: 'flex', justifyContent: 'center',}} >
       <List className={togglestyle.main}  sx={{ width: '100%', maxWidth: 560,}}>  
       <ListItem >
         <Checkbox  {...label}   onChange={() => toggleComplete(todo)}
@@ -79,7 +74,7 @@ const TodoResult = (props) => {
       <ListItemText sx={{border: '1px solid gray', borderRadius: '4px', padding:'.9rem'}} primary={todo.todotext} onClick={() => toggleComplete(todo)} className={todo.completed ?
           `${togglestyle.textComplete}`:`${togglestyle.text}`} >
        </ListItemText>
-       <Button onClick={handleOpen}><span><EditIcon sx={{color: 'green'}} /></span></Button>
+       <Button onClick={handleOpen}><span><EditIcon sx={{color: 'green', marginTop: '8px'}} /></span></Button>
            <Button onClick={() => deleteTodo(todo.id)}><DeleteIcon sx={{color: 'red'}} /></Button>
       </ListItem>
       </List>

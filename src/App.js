@@ -6,6 +6,7 @@ import { collection, query, onSnapshot, Timestamp, addDoc, deleteDoc, doc, updat
 import { db } from './firebase-cong';
 import { Button, TextField } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { Container } from '@mui/system';
 
 const useStyles = makeStyles({
   inputtext: {
@@ -22,9 +23,6 @@ const useStyles = makeStyles({
       borderBottom: '2px solid yellow',
     }
   },
-  inputbutton:{
-    margin: '10px 0 0px 30px',
-  }
 });
 
 
@@ -75,16 +73,18 @@ function App() {
 
   return (
     <div>
+      <Container >
       <form className='todo_form' onSubmit={createTodo}>
         <TextField className={formstyle.inputtext} color="warning" id="standard-search" label="Search Todo"
           type="search" variant="standard" placeholder="Enter message" value={input}
           onChange={(e) => setInput(e.target.value)} />
 
-        <Button className={formstyle.inputbutton} type="submit" variant="contained" size="large">add</Button>
+        <Button sx={{margin: '10px 0 0px 30px'}} type="submit" variant="contained" size="large">add</Button>
       </form>
       {todos.map((todo, index) => (
         <TodoResult todo={todo} key={index} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
       ))}
+      </Container>
     </div>
   );
 }
