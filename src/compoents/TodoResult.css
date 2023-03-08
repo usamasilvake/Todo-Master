@@ -1,0 +1,17 @@
+.todo_result{
+display: flex;
+justify-content: center;
+/* background-color: red; */
+width: 100%;
+}
+
+@media (max-width: 996px){
+    .todo_result{
+        background-color: red;
+    }
+    .modal_form{
+       display: flex;
+       
+       
+    }
+}
